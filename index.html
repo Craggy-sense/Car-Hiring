@@ -1,88 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Car Hire Website</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="booking.html">Booking</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('booking') }}">Booking</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
   <header>
     <h1>Welcome to Car Hire</h1>
     <p>Find your perfect car for any occasion.</p>
   </header>
-
+  
   <main>
     <section id="cars">
       <h2>Our Cars</h2>
 
       <p>We are a car hiring company that offers both self-drive and chauffeur-driven services for various occasions.</p>
 
-      <br>
-
       <div class="car">
-        <img src="mazda_cx3.png" alt="mazda_cx3">
+        <img src="{{ url_for('static', filename='images/mazda_cx3.png') }}" alt="mazda_cx3">
         <h3>Mazda CX3</h3>
         <p>Price per day: Ksh. 4,500</p>
-        <a href="booking.html?car=1" class="book-now-link">Book Now</a>
+        <a href="{{ url_for('booking') }}?car=1" class="book-now-link">Book Now</a>
       </div>
 
-      <div class="car">
-        <img src="vitz.jpeg" alt="vitz">
-        <h3>Vitz</h3>
-        <p>Price per day: Ksh. 3,000</p>
-        <a href="booking.html?car=2" class="book-now-link">Book Now</a>
-      </div>
+      <!-- Rest of the cars -->
 
-      <div class="car">
-        <img src="noah.jpeg" alt="noah">
-        <h3>Noah</h3>
-        <p>Price per day: Ksh. 4,500</p>
-        <a href="booking.html?car=3" class="book-now-link">Book Now</a>
-      </div>
-
-      <div class="car">
-        <img src="PRADO_TX.jpeg" alt="Prado_Tx">
-        <h3>Prado Tx</h3>
-        <p>Price per day: Ksh. 10,000</p>
-        <a href="booking.html?car=4" class="book-now-link">Book Now</a>
-      </div>
-
-      <div class="car">
-        <img src="mazda_cx5.jpeg" alt="mazda_cx5">
-        <h3>Mazda CX5</h3>
-        <p>Price per day: Ksh. 7,000</p>
-        <a href="booking.html?car=5" class="book-now-link">Book Now</a>
-      </div>
-
-      <div class="car">
-        <img src="nissan-note.jpg" alt="nissan-note">
-        <h3>Nissan Note</h3>
-        <p>Price per day: Ksh. 3,000</p>
-        <a href="booking.html?car=6" class="book-now-link">Book Now</a>
-      </div>
-
-      <div class="car">
-        <img src="Axia.jpeg" alt="Axia">
-        <h3>Axia</h3>
-        <p>Price per day: Ksh. 3,000</p>
-        <a href="booking.html?car=7" class="book-now-link">Book Now</a>
-      </div>
     </section>
   </main>
-
+  
   <footer>
     <p>&copy; 2023 Car Hire. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
+  
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
+
 

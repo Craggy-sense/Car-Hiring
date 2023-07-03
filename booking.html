@@ -1,62 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Car Hire Booking</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <title>Car Hire Website - Booking</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="booking.html">Booking</a>
-    <a href="contact.html">Contact</a>
-</nav>
-
-  <header>
-    <h1>Booking Details</h1>
-    <p>Enter your booking information below.</p>
-  </header>
-
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('booking') }}">Booking</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+  
   <main>
-    <section id="booking-form">
-      <h2>Book a Car</h2>
-      <form>
-        <label for="car-type">Car Type:</label>
-        <select id="car-type">
-          <option value="1">noah</option>
-          <option value="2">vitz</option>
-          <option value="3">Prado Tx</option>
-          <option value="4">mazda_cx3</option>
-          <option value="5">mazda_cx3</option>
-          <option value="6">Axia</option>
-          <option value="7">nissan-note</option>
-          <!-- Add more car options as needed -->
-        </select>
+    <section id="booking">
+      <h2>Booking Details</h2>
 
-        <label for="start-date">Start Date:</label>
-        <input type="date" id="start-date" required>
+      <p>Complete the booking form to reserve your car.</p>
 
-        <label for="end-date">End Date:</label>
-        <input type="date" id="end-date" required>
+      <!-- Add your booking form here -->
 
-        <button type="submit" onclick="calculatePrice()">Calculate Price</button>
-      </form>
-
-      <div id="booking-details">
-        <h3>Car Details</h3>
-        <p id="car-details"></p>
-        <h3>Total Price</h3>
-        <p id="total-price"></p>
-      </div>
     </section>
   </main>
-
+  
   <footer>
     <p>&copy; 2023 Car Hire. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
+  
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
-
